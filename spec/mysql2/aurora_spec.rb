@@ -13,11 +13,11 @@ RSpec.describe Mysql2::Aurora::Client do
 
   describe 'Mysql2::Aurora::VERSION' do
     subject do
-      expect(Mysql2::Aurora::VERSION.split(".").size).to eq(3)
+      Mysql2::Aurora::VERSION
     end
 
     it 'Valid version' do
-      puts Mysql2::Aurora::VERSION
+      expect(subject.split(".").size).to eq(3)
     end
   end
 
