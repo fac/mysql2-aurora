@@ -1,11 +1,11 @@
-FROM ruby:2.6.0-alpine3.8
+FROM ruby:3.4-bookworm
 
 # Create application directory.
 RUN mkdir /app
 WORKDIR /app
 
 # Install package
-RUN apk upgrade && apk add --update build-base git linux-headers libxml2-dev libxslt-dev mariadb-dev ruby-dev tzdata yaml-dev zlib-dev
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential git libxml2-dev libxslt-dev libmariadb-dev ruby-dev tzdata libyaml-dev zlib1g-dev && apt clean
 
 # Deploy application
 ADD . /app
