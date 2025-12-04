@@ -18,16 +18,18 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(/^(test|spec|features)\//) }
   end
 
-  spec.required_ruby_version = '>= 2.4.6'
+  spec.required_ruby_version = '>= 3.4'
 
   spec.add_dependency 'mysql2', '~> 0.5.6'
 
-  spec.add_development_dependency 'bundler',   '>= 1.16'
-  spec.add_development_dependency 'coveralls', '~> 0.8'
-  spec.add_development_dependency 'pry',       '~> 0.12'
-  spec.add_development_dependency 'rake',      '~> 13.0'
-  spec.add_development_dependency 'rspec',     '~> 3.0'
-  spec.add_development_dependency 'rubocop',   '~> 0.62'
-  spec.add_development_dependency 'simplecov', '~> 0.16'
-  spec.add_development_dependency 'yard',      '~> 0.9'
+  spec.add_development_dependency 'base64',     '~> 0.2'
+  spec.add_development_dependency 'bigdecimal', '~> 3.3'
+  spec.add_development_dependency 'bundler',    '>= 1.16'
+  spec.add_development_dependency 'coveralls',  '~> 0.8'
+  spec.add_development_dependency 'pry',        '~> 0.12'
+  spec.add_development_dependency 'rake',       '~> 13.0'
+  spec.add_development_dependency 'rspec',      '~> 3.0'
+  spec.add_development_dependency 'rubocop',    '~> 1.0'
+  spec.add_development_dependency 'simplecov',  '~> 0.16'
+  spec.add_development_dependency 'yard',       '~> 0.9'
 end

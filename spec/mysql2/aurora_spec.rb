@@ -194,7 +194,7 @@ RSpec.describe Mysql2::Aurora::Client do
         password:                      ENV['TEST_DB_PASS'],
         aurora_max_retry:              10,
         aurora_disconnect_on_readonly: aurora_disconnect_on_readonly,
-        flags: ["MULTI_STATEMENTS"]
+        flags:                         ['MULTI_STATEMENTS']
       )
     end
 
