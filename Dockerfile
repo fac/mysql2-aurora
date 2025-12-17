@@ -1,4 +1,4 @@
-FROM ruby:2.6.0-alpine3.8
+FROM ruby:3.4-alpine
 
 # Create application directory.
 RUN mkdir /app

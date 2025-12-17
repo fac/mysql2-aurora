@@ -52,7 +52,7 @@ module Mysql2
       # Reconnect to database and Set `@client`
       # @note If client is not connected, Connect to database.
       def reconnect!
-        query_options = (@client&.query_options&.dup || {})
+        query_options = @client&.query_options&.dup || {}
 
         disconnect!
 
@@ -71,7 +71,7 @@ module Mysql2
       # @param [String] name  Method name
       # @param [Array]  args  Method arguments
       # @param [Proc]   block Method block
-      def method_missing(name, *args, &block) # rubocop:disable Style/MethodMissingSuper, Style/MissingRespondToMissing
+      def method_missing(name, *args, &block) # rubocop:disable Style/MissingRespondToMissing
         client.public_send(name, *args, &block)
       end
 
@@ -79,7 +79,7 @@ module Mysql2
       # @param [String] name  Method name
       # @param [Array]  args  Method arguments
       # @param [Proc]   block Method block
-      def self.method_missing(name, *args, &block) # rubocop:disable Style/MethodMissingSuper, Style/MissingRespondToMissing
+      def self.method_missing(name, *args, &block) # rubocop:disable Style/MissingRespondToMissing
         Mysql2::Aurora::ORIGINAL_CLIENT_CLASS.public_send(name, *args, &block)
       end
 

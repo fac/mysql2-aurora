@@ -1,14 +1,11 @@
 AllCops:
-  TargetRubyVersion: 2.4.6
+  TargetRubyVersion: 3.4
   Exclude:
     - 'vendor/**/*'
     - 'bin/{console,setup}'
 
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
-
-Style/BracesAroundHashParameters:
-  EnforcedStyle: context_dependent
 
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -43,10 +40,10 @@ Style/RedundantSelf:
 Style/RegexpLiteral:
   AllowInnerSlashes: true
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedColonStyle: table
   EnforcedHashRocketStyle: table
 
@@ -57,10 +54,10 @@ Lint/AmbiguousBlockAssociation:
 Layout/ExtraSpacing:
   AllowForAlignment: true
 
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Layout/MultilineMethodCallBraceLayout:
@@ -69,7 +66,7 @@ Layout/MultilineMethodCallBraceLayout:
 Layout/SpaceInsideBlockBraces:
   EnforcedStyleForEmptyBraces: space
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Exclude:
     - 'spec/**/*'
 
@@ -88,7 +85,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Max: 10
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 100
   IgnoredPatterns:
     - "'.+'"                                                      # Text
